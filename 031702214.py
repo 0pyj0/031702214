@@ -175,11 +175,8 @@ def fseven():
     finallist.append(string)
     final["地址"]=finallist
 
-while 1:
-    try:
+try:
     mlist=input()
-    if(mlist=="EOF"):
-        break
     mlist.split('\\n')
     #from ast import literal_eval
     #mlist=literal_eval(ll)#将文件中的内容转换为list
@@ -225,4 +222,4 @@ while 1:
     #print(final)
     print(json.dumps(final))
 except EOFError:
-    main(inputraw)
+    print("输入输出错误")
