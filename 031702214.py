@@ -333,5 +333,5 @@ while 1:
         froad();
         fdoornum();
         fseven();
-    print(final)
+    #print(final)
     print(json.dumps(final))
