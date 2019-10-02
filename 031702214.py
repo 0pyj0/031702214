@@ -47,12 +47,21 @@ def fprovince():
             mlist=flist  #有“省”字的，可以直接用函数去掉的情况
     else:
         pro=''#province没有的情况,为了不输出[]
+    if pro=="北京市":
+        pro="北京"
+    elif pro=="上海市":
+        pro="上海"
+    elif pro=="天津市":
+        pro="天津"
+    elif pro=="重庆市":
+        pro="重庆 "
+
 
 
 def hprovince():
     global mlist
     global pro
-    province=re.search(("(.*?省)|(.*?自治区)|上海市|北京市|天津市|重庆市"), mlist)
+    province=re.search(("上海市|北京市|天津市|重庆市|(.*?自治区)|(.*?省)"), mlist)
     if province ==None:#直辖市
         if mlist[0:3] == "黑龙江":
             province= "黑龙江"
@@ -281,13 +290,13 @@ def fseven():
 
 while 1:
     inputraw=input()
-    if(inputraw=="END"):
+    if(inputraw=="END"): 
         break
     mlist=inputraw
     mlist.split('\\n')
     #from ast import literal_eval
     #mlist=literal_eval(ll)#将文件中的内容转换为list
-    kind=int(mlist[0])
+    kind=int(mlist[0]) 
     mlist=list(mlist)
     mlist.pop(0)#去掉难度等级
     mlist.pop(0)#去掉!
@@ -333,5 +342,5 @@ while 1:
         froad();
         fdoornum();
         fseven();
-    #print(final)
+    print(final)
     print(json.dumps(final))
