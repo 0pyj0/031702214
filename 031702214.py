@@ -168,7 +168,7 @@ def fdistrict():
 def hdistrict():
     global mlist
     global dis
-    district = re.search("(.*?自治旗)|(.*?[县区市旗])", mlist)
+    district = re.search("(.*?自治旗)|(.*?[县区市旗]|(.*?自治州))", mlist)
     if district==None:
         hh=0
         for i in districts:
